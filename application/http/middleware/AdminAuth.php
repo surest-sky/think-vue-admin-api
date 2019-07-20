@@ -11,13 +11,12 @@ class AdminAuth
 
     public function handle($request, \Closure $next)
     {
-        if(!$sid = $request->param('sid') && !$sid = $_COOKIE['PHPSESSID']) {
+        if((!$sid = $request->param('sid') ) && (!$sid = $_COOKIE['PHPSESSID'] ?? '')) {
             $this->failed('请登录');
         }
 
         session_id($sid);
         session_start();
-
         if(isset($_SESSION['admin_id'])){
             $user = AdminUser::find($_SESSION['admin_id']);
             $request->user = $user;

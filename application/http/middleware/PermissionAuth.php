@@ -23,6 +23,11 @@ class PermissionAuth
         # 匹配过滤后: admin/superstore/online/<id>
 
         $rule = $this->filter_rule($rule);
+
+        if($request->user->username == 'admin') {
+            return $next($request);
+        }
+
         if($permission = Permission::where('rule', $rule)
             ->where('method', 'like', "%$method%")
             ->find()){

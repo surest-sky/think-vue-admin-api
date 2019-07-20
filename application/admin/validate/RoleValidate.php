@@ -20,7 +20,10 @@ class RoleValidate extends BaseValidate
     ];
 
     protected $message = [
-        'name.isUnique' => '角色名称已经存在'
+        'name.isUnique' => '角色名称已经存在',
+        'name.require' => '角色名称必须存在',
+        'permission_ids.regex' => '权限id格式必须符合',
+        'reamark' => '备注字数不能超过100个字符串'
     ];
 
     protected function isUnique($name) {

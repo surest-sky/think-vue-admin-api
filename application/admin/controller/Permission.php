@@ -40,6 +40,7 @@ class Permission extends BaseController
         $r = $this->init_node((bool) request()->param('is_delete', 0));
         $this->successed($r);
     }
+
     /**
      * 获取所有的权限
      */

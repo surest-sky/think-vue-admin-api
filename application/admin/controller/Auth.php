@@ -13,10 +13,21 @@ use app\admin\validate\AdminUserLoginValidate;
 use Surest\Traits\TreeNode;
 use think\Request;
 
+/**
+ * 登录相关
+ * Class Auth
+ * @package app\admin\controller
+ */
 class Auth extends BaseController
 {
     use TreeNode;
 
+    /**
+     * 获取我的信息
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\ModelNotFoundException
+     * @throws \think\exception\DbException
+     */
     public function me()
     {
         if($this->user->username == 'admin') {

@@ -20,7 +20,6 @@ use think\Request;
  */
 class AdminUser extends BaseController
 {
-    protected $hidden = ['password'];
 
     /**
      * 管理员管理

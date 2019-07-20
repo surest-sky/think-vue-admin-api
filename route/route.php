@@ -9,21 +9,18 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP5!';
-});
-
-Route::get('hello/:name', 'index/hello');
-
-
 # 后台管理
 Route::group('admin', function (){
     Route::group('', function (){
 
         # 所有权限
         Route::get('permission/all','admin/Permission/all');
+
         # 初始化权限节点
         Route::post('permission/init_permission','admin/Permission/init_permission');
+
+        # 权限管理
+        Route::resource('permission','admin/Permission');
         # 管理员管理
         Route::resource('admin-user','admin/AdminUser');
         # 角色管理

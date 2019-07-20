@@ -10,6 +10,7 @@ class AdminUser extends BaseModel
     use HasRoles;
     protected $username_filed = 'username';
     protected $password_filed = 'password';
+    protected $hidden = ['password'];
 
     const ADMIN_USER = 'admin';
 
@@ -87,5 +88,12 @@ class AdminUser extends BaseModel
         }
 
         return $query;
+    }
+
+    public function getLogintimeAttr($val)
+    {
+        if($val) {
+            return getDateTime($val);
+        }
     }
 }
