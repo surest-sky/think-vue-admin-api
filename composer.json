@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=5.6.0",
+        "php": ">=7.1.0",
         "topthink/framework": "5.1.*",
         "surest/thinkphp-permission": "^0.1.0",
         "nette/mail": "^3.1",
