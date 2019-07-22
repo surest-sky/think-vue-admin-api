@@ -41,7 +41,7 @@ Route::group('admin', function (){
 
     # 获取权限信息
     Route::get('/role/permissions/:id', 'admin/Role/permissions')->middleware(['AdminAuth']);
-
+    
     # 不需要登录
     Route::post('login', 'admin/Auth/login');
 
