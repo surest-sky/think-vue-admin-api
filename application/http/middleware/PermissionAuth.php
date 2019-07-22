@@ -32,10 +32,10 @@ class PermissionAuth
             ->where('method', 'like', "%$method%")
             ->find()){
             if(!$request->user->can($permission)) {
-                $this->failed('没有权限');
+                $this->frobidden('没有权限');
             }
         }else{
-            $this->failed('没有权限');
+            $this->frobidden('没有权限');
         }
 
         return $next($request);

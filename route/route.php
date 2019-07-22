@@ -36,12 +36,15 @@ Route::group('admin', function (){
     # 获取我我的信息
     Route::get('me', 'admin/Auth/me')->middleware(['AdminAuth']);
 
+    # 获取七牛相关
+    Route::get('qiniu/photo', 'admin/Qiniu/photo');
+
     # 退出登录
     Route::delete('logout', 'admin/Auth/logout')->middleware(['AdminAuth']);
 
     # 获取权限信息
     Route::get('/role/permissions/:id', 'admin/Role/permissions')->middleware(['AdminAuth']);
-    
+
     # 不需要登录
     Route::post('login', 'admin/Auth/login');
 

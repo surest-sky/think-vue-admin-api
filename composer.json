@@ -22,7 +22,8 @@
         "nette/mail": "^3.1",
         "psy/psysh": "^0.9.9",
         "workerman/gateway-worker": "^3.0",
-        "workerman/workerman": "^3.5"
+        "workerman/workerman": "^3.5",
+        "qiniu/php-sdk": "^7.2"
     },
     "autoload": {
         "psr-4": {

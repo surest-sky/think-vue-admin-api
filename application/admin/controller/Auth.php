@@ -38,6 +38,7 @@ class Auth extends BaseController
         }else{
             $permissions = $this->user->getAllPermissions(true);
         }
+
         unset($this->user['permissions']);
         $this->user->permissions = $permissions;
         $this->successed($this->user);

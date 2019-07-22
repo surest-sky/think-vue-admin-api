@@ -111,7 +111,7 @@ class Role extends BaseController
             $this->frobidden("角色不存在");
         }
 
-        $permissions = $role->permissions->visible(['id', 'name']);
+        $permissions = $role->permissions->visible(['id', 'name', 'rule']);
         $role->permissions = $permissions;
 
         $this->successed($role);
