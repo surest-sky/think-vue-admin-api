@@ -2,6 +2,9 @@
 
 namespace app\admin\model;
 
+use app\common\server\Events;
+use app\observer\Event;
+use app\observer\Login\LoginHandler;
 use Surest\Traits\HasRoles;
 use think\Model;
 
@@ -54,7 +57,7 @@ class AdminUser extends BaseModel
         return md5($password);
     }
     /**
-     * 登录
+     * 使之登录
      * @param AdminUser $user
      * @return string
      */
@@ -63,6 +66,11 @@ class AdminUser extends BaseModel
         session_start();
         $sid = session_id();
         $_SESSION['admin_id'] = $user->id;
+
+        $event = new Event();
+        $event->add(new LoginHandler($user));
+        $event->trigger();
+
         return $sid;
     }
 
@@ -80,7 +88,7 @@ class AdminUser extends BaseModel
         }
 
         if($nickname) {
-            $query->where('user_nickname', 'like', "%$nickname%");
+            $query->where('nickname', 'like', "%$nickname%");
         }
 
         if($email) {
@@ -90,6 +98,11 @@ class AdminUser extends BaseModel
         return $query;
     }
 
+    /**
+     * 登录时间
+     * @param $val
+     * @return false|string
+     */
     public function getLogintimeAttr($val)
     {
         if($val) {
@@ -107,5 +120,20 @@ class AdminUser extends BaseModel
             return true;
         }
         return false;
+    }
+
+    /**
+     * 是不是最高管理员
+     * 用于前端隐藏删除按钮
+     * @param $temp
+     * @param $data
+     * @return int
+     */
+    public function getIsAdminAttr()
+    {
+        if(self::checkIsAdmin($this)) {
+            return 1;
+        }
+        return 0;
     }
 }

@@ -33,7 +33,7 @@ class AdminUser extends BaseController
 
         $list = AdminUserModel::condition()
             ->sort()
-            ->append(['to_roles'])
+            ->append(['to_roles', 'is_admin'])
             ->paginate($pagesize, false, compact('page'));
 
         $this->successed($list);
@@ -51,10 +51,10 @@ class AdminUser extends BaseController
         if(!$admin = AdminUserModel::create([
             'username' => $data['username'],
             'password' => isset($data['password']) ? AdminUserModel::encrypt($data['password']) :  AdminUserModel::encrypt("123456"),
-            'user_avatar' => $data['user_avatar'],
+            'avatar' => $data['avatar'],
             'description' => $data['description'] ?? '',
             'email' => $data['email'] ?? '',
-            'user_nickname' => $data['user_nickname'] ?? '',
+            'nickname' => $data['nickname'] ?? '',
         ]) ) {
             Db::rollback();
             $this->frobidden('请联系管理员');
@@ -89,19 +89,19 @@ class AdminUser extends BaseController
         $set_data = [
             'username' => $data['username'],
             'password' => isset($data['password']) ? AdminUserModel::encrypt($data['password']) :  AdminUserModel::encrypt("123456"),
-            'user_avatar' => $data['user_avatar'],
+            'avatar' => $data['avatar'],
             'description' => $data['description'] ?? '',
             'email' => $data['email'] ?? '',
-            'user_nickname' => $data['user_nickname'] ?? '',
+            'nickname' => $data['nickname'] ?? '',
             'isNotice' => $data['isNotice'] ?? 1,
         ];
 
         if(!$admin = AdminUserModel::find($id)) {
-            $this->frobidden("管理员未找到");
+            $this->frobidden("你不能操作管理员");
         }
 
         if(AdminUserModel::checkIsAdmin($admin)) {
-            $this->frobidden("你的权限不够");
+            $this->frobidden("无法在当前页面更新这个用户信息");
         }
 
         Db::startTrans();
@@ -128,6 +128,9 @@ class AdminUser extends BaseController
     public function delete($id)
     {
         if($admin = AdminUserModel::find($id)) {
+            if(AdminUserModel::checkIsAdmin($admin)) {
+                $this->frobidden("你不能操作管理员");
+            }
             $admin->delete();
             $this->successed("删除成功");
         }else{

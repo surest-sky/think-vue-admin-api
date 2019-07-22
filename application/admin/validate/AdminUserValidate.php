@@ -18,11 +18,10 @@ class AdminUserValidate extends BaseValidate
         'username' => 'require|min:1|isUnique',
         'password' => 'min:6|max:20',
         'description' => 'max:100',
-        'user_nickname' => 'max:100',
-        'user_avatar' => 'require|url',
+        'nickname' => 'max:100',
+        'avatar' => 'require|url',
         'role_ids' => 'regex:ids',
-        'email' => 'email|isUnique',
-        'isNotice' => 'in:1,2'
+        'email' => 'email|isUnique'
     ];
 
     protected $message = [
