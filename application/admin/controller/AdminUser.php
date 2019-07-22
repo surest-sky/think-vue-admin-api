@@ -96,12 +96,16 @@ class AdminUser extends BaseController
             'isNotice' => $data['isNotice'] ?? 1,
         ];
 
-        Db::startTrans();
         if(!$admin = AdminUserModel::find($id)) {
             $this->frobidden("管理员未找到");
         }
-        AdminUserModel::update($set_data, compact('id'));
 
+        if(AdminUserModel::checkIsAdmin($admin)) {
+            $this->frobidden("你的权限不够");
+        }
+
+        Db::startTrans();
+        AdminUserModel::update($set_data, compact('id'));
         try {
             # 检查权限是否存在
             if(isset($data['role_ids'])) {

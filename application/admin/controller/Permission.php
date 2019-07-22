@@ -8,7 +8,7 @@
 
 namespace app\admin\controller;
 use app\admin\validate\PermissionValidate;
-use Surest\Model\Permission as PermissionModel;
+use app\admin\model\Permission as PermissionModel;
 use Surest\Traits\TreeNode;
 
 /**
@@ -37,7 +37,7 @@ class Permission extends BaseController
      */
     public function init_permission()
     {
-        $r = $this->init_node((bool) request()->param('is_delete', 0));
+        $r = PermissionModel::init_();
         $this->successed($r);
     }
 

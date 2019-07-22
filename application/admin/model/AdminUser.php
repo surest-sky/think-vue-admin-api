@@ -96,4 +96,16 @@ class AdminUser extends BaseModel
             return getDateTime($val);
         }
     }
+
+
+    /**
+     * 检查是否是管理员
+     */
+    public static function checkIsAdmin(self $adminUser)
+    {
+        if($adminUser->username === "admin") {
+            return true;
+        }
+        return false;
+    }
 }
