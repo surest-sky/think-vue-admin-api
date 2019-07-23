@@ -127,6 +127,7 @@ class AdminUser extends BaseController
      */
     public function delete($id)
     {
+        $this->frobidden('', '演示环境不允许删除节点，请勿继续操作');
         if($admin = AdminUserModel::find($id)) {
             if(AdminUserModel::checkIsAdmin($admin)) {
                 $this->frobidden("你不能操作管理员");

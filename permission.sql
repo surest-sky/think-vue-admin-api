@@ -40,8 +40,8 @@ CREATE TABLE `admin_user` (
 -- ----------------------------
 -- Records of admin_user
 -- ----------------------------
-INSERT INTO `admin_user` VALUES ('5', 'admin', '83b2f027abe3b60eadee76ab39fbdc5a', '1563862664', '127.0.0.1', '1', '0', '1563862664', 'admin', 'http://offline-photo.d88.tech/7.844688863317173', '', '');
-INSERT INTO `admin_user` VALUES ('7', '测试', 'e10adc3949ba59abbe56e057f20f883e', '1563790637', '0.0.0.0', '1', '0', '1563790637', '测试', 'http://cdn.surest.cn/19.967929173999956', '', '15621352@qq.com');
+INSERT INTO `admin_user` VALUES ('5', 'admin', '83b2f027abe3b60eadee76ab39fbdc5a', '1563862664', '127.0.0.1', '1', '0', '1563862664', 'admin', 'http://cdn.surest.cn/19.967929173999956', '', '');
+INSERT INTO `admin_user` VALUES ('7', '测试', '83b2f027abe3b60eadee76ab39fbdc5a', '1563790637', '0.0.0.0', '1', '0', '1563790637', '测试', 'http://cdn.surest.cn/19.967929173999956', '', '15621352@qq.com');
 
 -- ----------------------------
 -- Table structure for circle
