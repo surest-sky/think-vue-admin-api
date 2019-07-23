@@ -9,7 +9,7 @@
 namespace app\admin\controller;
 
 use app\admin\validate\RoleValidate;
-use Surest\Model\Role as RoleModel;
+use app\admin\model\Role as RoleModel;
 use Surest\Traits\TreeNode;
 use think\Db;
 
@@ -27,7 +27,7 @@ class Role extends BaseController
      */
     public function index()
     {
-        $roles = RoleModel::where(0, 0)->select()->toArray();
+        $roles = RoleModel::condition()->select()->toArray();
         $this->successed(compact('roles'));
     }
 
