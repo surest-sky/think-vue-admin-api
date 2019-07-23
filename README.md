@@ -11,6 +11,8 @@
 
     git clone https://github.com/surest-sky/think-vue-admin-api.git
     
+    cd think-vue-admin-api
+    
     composer install
     
     导入 目录下的 `permission.sql`
@@ -57,7 +59,49 @@ psysh 是什么: [http://vergil.cn/archives/psysh](http://vergil.cn/archives/psy
     $ids = $validate->getIds();
     
 
-### 响应格式
+### 响应方式
+
+- $this->successed(); 
+
+   {
+       "msg": "success",
+       "code": 200,
+       "data": {}
+   }
+
+- $this->internalError();
+
+    {
+        "msg": "服务器错误",
+        "code": 500,
+        "data": {}
+    }
+
+- $this->notFond();
+
+    {
+        "msg": "未找到",
+        "code": 404,
+        "data": {}
+    }
+
+
+- $this->frobidden();
+
+    {
+        "msg": "未授权",
+        "code": 401,
+        "data": {}
+    }
+
+
+- $this->failed();
+
+    {
+        "msg": "授权失败",
+        "code": 403,
+        "data": {}
+    }
     
 在 `BaseController` 中
     
@@ -69,7 +113,7 @@ psysh 是什么: [http://vergil.cn/archives/psysh](http://vergil.cn/archives/psy
     
     $this->successed($list);
     
-具体的可见方法: app\common\Traits\ApiResponse
+具体的可见方法: [app\common\Traits\ApiResponse](https://github.com/surest-sky/think-vue-admin-api/blob/master/application/common/Traits/ApiResponse.php)
 
 ### 异常处理控制
     
