@@ -4,11 +4,12 @@
 
 他的作用
 
-自带登录校验
-快速完成数据格式校验
-自带权限管理机制
-支持权限管理自动生成节点
-自带响应格式处理
+- 自带登录校验
+- 快速完成数据格式校验
+- 自带权限管理机制
+- 支持权限管理自动生成节点
+- 自带响应格式处理
+- 支持后端的菜单控制
 
 利用它
 
@@ -18,6 +19,8 @@
 
 账号: admin
 密码: admin123
+
+vue 地址　: [https://github.com/surest-sky/thinkphp-vue-admin](https://github.com/surest-sky/thinkphp-vue-admin)
 
 ### 安装
 
@@ -151,3 +154,10 @@ psysh 是什么: [http://vergil.cn/archives/psysh](http://vergil.cn/archives/psy
 设置了 `is_anomaly_andling_takeover` 就是告诉 `ApiResponse` 需要返回一个`response`响应
 
 
+
+### 交流群
+
+QQ 交流群
+
+![https://s2.ax1x.com/2019/07/23/ek4oCD.jpg](https://s2.ax1x.com/2019/07/23/ek4oCD.jpg
+)
