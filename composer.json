@@ -18,12 +18,12 @@
     "require": {
         "php": ">=7.1.0",
         "topthink/framework": "5.1.*",
-        "surest/thinkphp-permission": "^0.1.0",
         "nette/mail": "^3.1",
         "psy/psysh": "^0.9.9",
         "workerman/gateway-worker": "^3.0",
         "workerman/workerman": "^3.5",
-        "qiniu/php-sdk": "^7.2"
+        "qiniu/php-sdk": "^7.2",
+        "surest/thinkphp-permission": "^0.1.0"
     },
     "autoload": {
         "psr-4": {
