@@ -107,11 +107,11 @@ psysh 是什么: [http://vergil.cn/archives/psysh](http://vergil.cn/archives/psy
 
 - $this->frobidden();
 
-        {
-            "msg": "未授权",
-            "code": 401,
-            "data": {}
-        }
+            {
+                "msg": "未授权",
+                "code": 401,
+                "data": {}
+            }
 
 
 - $this->failed();
@@ -164,3 +164,7 @@ psysh 是什么: [http://vergil.cn/archives/psysh](http://vergil.cn/archives/psy
 QQ 交流群
 
 ![https://s2.ax1x.com/2019/07/23/ek4oCD.jpg](https://s2.ax1x.com/2019/07/23/ek4oCD.jpg)
+
+### 我的博客
+
+[http://surest.cn](http://surest.cn)
