@@ -25,6 +25,14 @@ Route::group('admin', function (){
         Route::resource('admin-user','admin/AdminUser');
         # 角色管理
         Route::resource('role','admin/Role');
+
+        # 圈子管理
+        Route::resource('circle','admin/Circle');
+        Route::post('circle/audit','admin/Circle/audit');
+        Route::post('circle/batch_lower', 'admin/Circle/batch_lower'); # 批量屏蔽
+        Route::post('circle/batch_online', 'admin/Circle/batch_online'); # 批量上线
+        Route::delete('circle/batch_delete', 'admin/Circle/batch_delete'); # 批量删除
+
         # 获取所有角色
         Route::get('role/all','admin/Role/all');
 
