@@ -48,4 +48,4 @@ Route::group('admin', function (){
     # 不需要登录
     Route::post('login', 'admin/Auth/login');
 
-});
+})->middleware(['CrossDomain']);
