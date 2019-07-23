@@ -1,6 +1,10 @@
-## thinkphp-vue-admin 后台接口 |　后端ａｐｉ解决方案
+## thinkphp-vue-admin 后台接口 |　前后端分离解决方案
 
 > 它一套有thinkphp开发集成性后台接口，内置权限管理，api响应，psysh等多功能工具
+
+推荐一个thinkphp 权限管理包：
+
+[https://github.com/surest-sky/thinkphp-permission](https://github.com/surest-sky/thinkphp-permission)
 
 他的作用
 
@@ -159,5 +163,4 @@ psysh 是什么: [http://vergil.cn/archives/psysh](http://vergil.cn/archives/psy
 
 QQ 交流群
 
-![https://s2.ax1x.com/2019/07/23/ek4oCD.jpg](https://s2.ax1x.com/2019/07/23/ek5rZt.jpg
-)
+![https://s2.ax1x.com/2019/07/23/ek4oCD.jpg](https://s2.ax1x.com/2019/07/23/ek4oCD.jpg)
