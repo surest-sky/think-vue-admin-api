@@ -49,6 +49,18 @@ class Circle extends BaseController
     }
 
     /**
+     * 更新操作
+     * @param $id
+     */
+    public function update($id)
+    {
+        $validate = (new CircleValidate())->goCheck();
+        $data = $validate->validatedData(); # 获取验证通过的数据
+
+        // something....
+    }
+
+    /**
      * 删除圈子
      * @param $id
      */

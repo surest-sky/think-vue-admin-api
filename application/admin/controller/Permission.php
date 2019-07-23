@@ -37,7 +37,7 @@ class Permission extends BaseController
      */
     public function init_permission()
     {
-        $r = PermissionModel::init_();
+        $r = PermissionModel::init_((bool) request()->param('is_delete', 0));
         $this->successed($r);
     }
 

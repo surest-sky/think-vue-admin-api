@@ -20,7 +20,7 @@ class RouteExceptionHandler extends BaseException implements CustomExceptionInte
     {
         # 检测理由错误
         if( $e instanceof HttpException) {
-            return $this->showMsg("当前请求路由不存在", $err_info, 404);
+            return $this->showMsg("响应发生错误", $err_info, 404);
         }
     }
 }

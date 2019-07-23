@@ -11,5 +11,6 @@
 
 return [
     'psysh' => 'app\common\command\Psysh',
+    'init_permission' => 'app\common\command\init_permission',
     'app\common\command\Workerman',
 ];

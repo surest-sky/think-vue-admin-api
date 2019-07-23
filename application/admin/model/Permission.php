@@ -15,8 +15,12 @@ class Permission extends \Surest\Model\Permission
 {
     use TreeNode;
 
-    public static function init_()
+    /**
+     * 初始化权限节点
+     * @param $is_delete bool 是否删除节重建节点
+     */
+    public static function init_($is_delete = 0)
     {
-        (new  static())->init_node((bool) request()->param('is_delete', 0));
+        (new  static())->init_node($is_delete);
     }
 }

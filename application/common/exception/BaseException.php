@@ -19,6 +19,7 @@ class BaseException
     public function __construct()
     {
         # 这个必须强制设置为true
+        # 使用异常处理接管的函数必须返回一个 `response` 响应, 所以设置为true 交给apiResponse处理
         $this->is_anomaly_andling_takeover = true;
 
         # 检查当前异常处理是否继承了异常处理接管, 没有则抛出一个异常
