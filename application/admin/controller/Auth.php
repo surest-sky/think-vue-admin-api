@@ -72,4 +72,10 @@ class Auth extends BaseController
         unset($_SESSION);
         $this->successed('', '退出成功');
     }
+
+
+    public function any()
+    {
+        $this->notFond('404');
+    }
 }
