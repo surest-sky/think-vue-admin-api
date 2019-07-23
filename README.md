@@ -1,6 +1,18 @@
-## thinkphp-vue-admin 后台接口
+## thinkphp-vue-admin 后台接口 |　后端ａｐｉ解决方案
 
 > 它一套有thinkphp开发集成性后台接口，内置权限管理，api响应，psysh等多功能工具
+
+他的作用
+
+自带登录校验
+快速完成数据格式校验
+自带权限管理机制
+支持权限管理自动生成节点
+自带响应格式处理
+
+利用它
+
+快速搭建基础的　前后端分离场景下的后台
 
 在线地址: [http://v-web.surest.cn/](http://v-web.surest.cn/)
 
