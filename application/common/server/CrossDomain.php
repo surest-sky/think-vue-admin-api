@@ -9,13 +9,15 @@
 namespace app\common\server;
 
 
+use think\Request;
+
 class CrossDomain
 {
     /**
      * 跨域问题解决
      * Credentials: true
      */
-    public static function credentials()
+    public static function credentials(Request $request)
     {
         $origin = $_SERVER['HTTP_ORIGIN'] ?? '*';
         header("Access-Control-Allow-Origin: $origin");

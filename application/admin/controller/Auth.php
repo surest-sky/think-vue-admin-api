@@ -31,8 +31,7 @@ class Auth extends BaseController
     public function me()
     {
         if($this->user->username == 'admin') {
-            $permissions = \Surest\Model\Permission::where(0, 0)
-                ->order('method', 'desc')
+            $permissions = \Surest\Model\Permission::order('method', 'desc')
                 ->select()->toArray();
             $permissions = self::recursive_make_tree($permissions);
         }else{

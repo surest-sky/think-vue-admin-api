@@ -23,7 +23,7 @@
         "workerman/gateway-worker": "^3.0",
         "workerman/workerman": "^3.5",
         "qiniu/php-sdk": "^7.2",
-        "surest/thinkphp-permission": "^0.1.0"
+        "surest/thinkphp-permission": "dev-master"
     },
     "autoload": {
         "psr-4": {
