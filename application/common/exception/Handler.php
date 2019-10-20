@@ -37,9 +37,9 @@ class Handler extends Handle
             $isDebug = config('app.app_debug'); # 判断是否是断点模式
 
 //            # 走系统抛出的系统
-//            if( !request()->isAjax() || $isDebug) {
-//                return parent::render($e);
-//            }
+            if( !request()->isAjax() || $isDebug) {
+                return parent::render($e);
+            }
             $class_ = get_class($e);
             # 错误的信息, 用于写入日志
             $error_info = [

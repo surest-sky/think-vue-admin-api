@@ -17,11 +17,11 @@ class CrossDomain
      * 跨域问题解决
      * Credentials: true
      */
-    public static function credentials(Request $request)
+    public static function credentials()
     {
         $origin = $_SERVER['HTTP_ORIGIN'] ?? '*';
         header("Access-Control-Allow-Origin: $origin");
-        header('Access-Control-Allow-Credentials: true');
+//        header('Access-Control-Allow-Credentials: true');
         header('Access-Control-Allow-Headers: Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With');
         header('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE');
         header('Access-Control-Max-Age: 1728000');
