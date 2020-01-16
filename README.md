@@ -1,3 +1,13 @@
+
+# 非常抱歉，由于时间问题，这个项目暂时不维护了，有需要的使用这个（最近没有时间) 
+
+https://github.com/hardphp/vue-admin
+
+
+---------
+
+以下是原文
+
 ## thinkphp-vue-admin 后台接口 |　前后端分离解决方案
 
 > 它一套有thinkphp开发集成性后台接口，内置权限管理，api响应，psysh等多功能工具
