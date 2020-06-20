@@ -66,7 +66,6 @@ class Auth extends BaseController
     public function logout(Request $request)
     {
         $sid = $request->param('sid');
-        session_id($sid);
         session_destroy();
         unset($_SESSION);
         $this->successed('', '退出成功');

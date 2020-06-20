@@ -1,11 +1,3 @@
-
-# 非常抱歉，由于时间问题，这个项目暂时不维护了，有需要的使用这个（最近没有时间) 
-
-https://github.com/hardphp/vue-admin
-
-
----------
-
 以下是原文
 
 ## thinkphp-vue-admin 后台接口 |　前后端分离解决方案
@@ -178,16 +170,6 @@ QQ 交流群
 ### 我的博客
 
 [http://surest.cn](http://surest.cn)
-
-
-
-composer install -vvv
-
-导入sql
-
-配置站点，并且站点地址前端文件为:
-
-    setting.js AdminApiUrl
     
 
 

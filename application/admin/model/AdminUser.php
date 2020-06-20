@@ -42,6 +42,7 @@ class AdminUser extends BaseModel
     public function attempt(string $username, string $password)
     {
         $password = self::encrypt($password);
+
         if($user = self::where($this->username_filed, $username)->where($this->password_filed, $password)->find()){
             return $user;
         }
