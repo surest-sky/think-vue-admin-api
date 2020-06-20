@@ -9,6 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+use app\common\server\CrossDomain;
+
+CrossDomain::any();
 # 后台管理
 Route::group('admin', function (){
     Route::group('', function (){

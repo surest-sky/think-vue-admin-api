@@ -36,7 +36,7 @@ class BaseException
     public function showMsg($msg, array $error_info, $code = 500)
     {
         # 跨域问题
-        \app\common\server\CrossDomain::credentials();
+        \app\common\server\CrossDomain::any();
         # 写入日志
 //        Log::setException()->setTitle($msg)->setLevel($this->getLevel())->setContent($error_info);
         if(config('app.app_debug')) {
