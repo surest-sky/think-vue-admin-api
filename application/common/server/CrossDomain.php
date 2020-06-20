@@ -9,7 +9,9 @@
 namespace app\common\server;
 
 
+use think\exception\HttpResponseException;
 use think\Request;
+use think\response\Json as JsonResponse;
 
 class CrossDomain
 {
@@ -37,5 +39,10 @@ class CrossDomain
         header('Access-Control-Allow-Headers: Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With');
         header('Access-Control-Allow-Methods: GET, POST, OPTIONS , PATCH, PUT, DELETE');
         header('Access-Control-Max-Age: 1728000');
+
+        if($_SERVER['REQUEST_METHOD'] == "OPTIONS") {
+            $response = JsonResponse::create([], 'json', 200);
+            throw new HttpResponseException($response);
+        }
     }
 }
