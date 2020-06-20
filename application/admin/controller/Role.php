@@ -65,7 +65,6 @@ class Role extends BaseController
      */
     public function delete($id)
     {
-        $this->frobidden('', '演示环境不允许删除节点，请勿继续操作');
         if($role = RoleModel::where('name', '<>', "超级管理员")->find($id)) {
             $role->delete();
             $this->successed('', '删除成功');

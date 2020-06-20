@@ -178,3 +178,16 @@ QQ 交流群
 ### 我的博客
 
 [http://surest.cn](http://surest.cn)
+
+
+
+composer install -vvv
+
+导入sql
+
+配置站点，并且站点地址前端文件为:
+
+    setting.js AdminApiUrl
+    
+
+

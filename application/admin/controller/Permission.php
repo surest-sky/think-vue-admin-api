@@ -107,7 +107,6 @@ class Permission extends BaseController
      */
     public function delete($id)
     {
-        $this->frobidden('', '演示环境不允许删除节点，请勿继续操作');
         if(PermissionModel::destroy($id)){
             PermissionModel::where('p_id', $id)->delete();
         }
