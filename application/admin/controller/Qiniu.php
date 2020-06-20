@@ -2,7 +2,9 @@
 
 namespace app\admin\controller;
 
+use app\common\Traits\ApiResponse;
 use Qiniu\Auth;
+use think\Env;
 use think\Request;
 
 class Qiniu extends BaseController
@@ -46,19 +48,20 @@ class Qiniu extends BaseController
      */
     public function photo(Request $request)
     {
-        $type = $request->param('type', 'photo');
+        $env = new Env();
+        $qiniuConfig = config("qiniu.");
+        // 用于签名的公钥和私钥
+        $accessKey = $qiniuConfig['QINIU_AK'];
+        $secretKey = $qiniuConfig['QINIU_SK'];
+        $auth = new Auth($accessKey, $secretKey);
+        $prefix = $env->get('APP_ENV') ? 'temp/' : '';
+        $key = $prefix . 'uploads/' . date('Ymd') . '/' . md5(microtime(true)) . '$(ext)';
+        $token = $auth->uploadToken($qiniuConfig['QINIU_BUKET_PATH'], null, 3600, ['saveKey' => $key]);
+        $host = $qiniuConfig['QINIU_HOST'];
+        $buket = $qiniuConfig['QINIU_BUKET_PATH'];
+        $uploadUrl = $qiniuConfig['QINIU_UPLOAD_URL'];
 
-        if (!in_array($type,['banner','user','photo']))
-        {
-            $this->frobidden('类型错误');
-        }
-
-        $auth = new Auth(\config('qiniu.'.$type.'.AK'),\config('qiniu.'.$type.'.SK'));
-
-        // 生成上传Token
-        $token = $auth->uploadToken(\config('qiniu.'.$type.'.bucket'));
-
-        $this->successed(compact('token'));
+        $this->successed(compact('token', 'host', 'buket', 'uploadUrl'));
     }
 
     /**

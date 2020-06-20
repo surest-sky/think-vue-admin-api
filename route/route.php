@@ -12,7 +12,6 @@
 # 后台管理
 Route::group('admin', function (){
     Route::group('', function (){
-
         # 所有权限
         Route::get('permission/all','admin/Permission/all');
         # 初始化权限节点

@@ -19,6 +19,7 @@ class BaseController extends Controller
 
     public function __construct(Request $request)
     {
+        parent::__construct();
         $user = $request->user;
         $this->user = $user;
     }
