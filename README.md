@@ -1,3 +1,15 @@
+# 该项目已停止维护！！！！
+
+本项目已经不再维护。使用时建议参考同类项目，**推荐使用**如下项目
+
+https://github.com/hardphp/vue-admin
+
+----------------------------
+
+欢迎加入微信群:
+
+![WechatIMG18.jpeg](https://surest.cn/usr/uploads/2021/03/2515408408.jpeg)
+
 以下是原文
 
 ## thinkphp-vue-admin 后台接口 |　前后端分离解决方案
